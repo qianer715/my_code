@@ -28,8 +28,31 @@ class Solution(object):
         for num in nums:
            if num == 1:
             count += 1
-			n = max(n,count)
+            n = max(n,count)
            else:
-            count = 0
+              count = 0
+        return n		
+
+		
+		
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n = 0
+        count = 0
+		list = []
+        for num in nums:
+           if num == 1:
+             count += 1
+           else:
+              list.append(count)
+              count = 0
+        n = max(list)
         return n
 		
+
+Runtime Error Message: Line 16: ValueError: max() arg is an empty sequence
+Last executed input: [1]
